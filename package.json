@@ -1,5 +1,5 @@
 {
-  "name": "nexus",
+  "name": "ifoverflow",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,35 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
+    "@devmehq/email-validator-js": "^1.0.16",
+    "@hookform/error-message": "^2.0.1",
+    "@hookform/resolvers": "^3.1.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
-    "next": "13.4.10",
+    "next": "13.4.7",
+    "phosphor-react": "^1.4.1",
     "postcss": "8.4.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-hot-toast": "^2.4.1",
+    "react-loader-spinner": "^5.4.5",
+    "react-secure-storage": "^1.2.2",
+    "react-select": "^5.7.4",
+    "suneditor": "^2.45.1",
+    "suneditor-react": "^3.6.1",
+    "zod": "^3.21.4",
+    "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@tanstack/react-query": "^4.29.25",
+    "@tanstack/react-query-devtools": "^4.35.3",
+    "@types/node": "20.4.2",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "react-avatar": "^5.0.3",
+    "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   }

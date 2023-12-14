@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset styles for SunEditor */
+/* .sun-editor .se-wrapper-inner,
+.sun-editor .se-wrapper-wysiwyg,
+.sun-editor .sun-editor-editable,
+.sun-editor .se-read-only,
+.se-navigation .sun-editor-common {
+   border: none; 
+} */
+
+.sun-editor,
+.sun-editor > * {
+  border: none !important;
+}
+
+/* .sun-editor * {
+  overflow: hidden !important;
+} */
+
+.se-container {
+  margin-top: 1em !important;
+}
+
+.sun-editor .se-resizing-bar {
+  display: none !important;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+option {
+  color: #fff !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    /* background: black; */
+/* }
+}  */
+/*  */
+
+:root {
+  --primary: #000;
+  --secondary: #fff;
+  --tertiary: #cecece;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--secondary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
+}
