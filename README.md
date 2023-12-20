@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Login IFoverflow](image.png)
 
-## Getting Started
+# IFoverflow: um Sistema de Perguntas e Respostas com aplicação da Teoria do Caos
 
-First, run the development server:
+Este projeto é parte integrante do Trabalho de Conclusão de Curso (TCC) intitulado "Geração de Conhecimento: Uma Aplicação da Teoria do Caos em um Sistema de Perguntas e Respostas". O IFoverflow é uma plataforma que explora a convergência entre a Teoria do Caos e ambientes digitais, oferecendo uma abordagem única para a geração dinâmica de conhecimento.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Resumo do Artigo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O IFoverflow é uma expressão prática da aplicação da Teoria do Caos em um ambiente digital, especialmente focado a geração de conhecimento em sistemas de perguntas e respostas. Este estudo destaca a crescente complexidade desses ambientes, introduzindo a Teoria do Caos como uma abordagem promissora para compreender dinâmicas complexas e imprevisíveis. A metodologia empregada englobou uma pesquisa exploratória sobre o caos e conhecimento, e em paralelo pelo desenvolvimento da rede social IFoverflow. A análise das características caóticas presentes no software durante a criação do conhecimento foi um aspecto central do estudo, evidenciando como o caos está intrinsecamente presente nesse sistema interativo de perguntas e respostas, contribuindo para a geração de conhecimento de maneira inovadora.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Instruções de Execução
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Para executar o IFoverflow localmente, siga os passos abaixo:
 
-## Learn More
+1. Certifique-se de ter o Node.js instalado em sua máquina. Caso não tenha, faça o download e a instalação em https://nodejs.org/.
 
-To learn more about Next.js, take a look at the following resources:
+2. Instale o gerenciador de pacotes pnpm globalmente utilizando o seguinte comando:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install -g pnpm
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Navegue até o diretório principal do projeto e execute o seguinte comando para instalar as dependências:
 
-## Deploy on Vercel
+   ```bash
+   pnpm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Após a conclusão da instalação, execute o projeto localmente com o seguinte comando:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   pnpm dev
+   ```
+
+5. Abra o navegador e acesse `http://localhost:3000` para interagir com o IFoverflow.
+
+## Acesso Online
+
+Você também pode acessar o IFoverflow online [aqui](https://ifoverflow.vercel.app/), explorando as funcionalidades diretamente na plataforma hospedada.

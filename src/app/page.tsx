@@ -76,6 +76,7 @@ export default function Home() {
     try {
       signInMutation(payload);
     } catch (error) {
+      console.log(error);
       toast.error("Erro, tente novamente!");
     }
   }
