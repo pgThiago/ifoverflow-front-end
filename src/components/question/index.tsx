@@ -1,7 +1,7 @@
 import { IQuestionItemProps } from "@/interfaces";
 import { useService } from "@/services";
 import { NewAnswerTypes } from "@/types";
-import { formatDescriptionTextByChatGPT } from "@/utils/formatDescriptionText";
+import { formatDescriptionText } from "@/utils/formatDescriptionText";
 import { useAuthStore } from "@/zustand/useAuthStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -170,29 +170,6 @@ export const Question = ({
           {question?.title}
         </Link>
 
-        {/* <SunEditor
-          lang={"pt_br"}
-          height="auto"
-          setDefaultStyle={`
-                font-size: 16px; 
-                padding: 8px;
-                position: relative;
-                z-index: 1;              
-                background-color: ${isOwnerOfQuestion ? "#e0f2fe" : "white"};
-              `}
-          defaultValue={
-            !isShowingDetails
-              ? formatDescriptionTextByChatGPT(question?.description, 100)
-              : question?.description
-          }
-          readOnly
-          hideToolbar
-          setOptions={{
-            showPathLabel: false,
-          }}
-        />
-        <style>{}</style> */}
-
         <CustomEditor
           customStyle={`
               // .sun-editor { 
@@ -231,7 +208,7 @@ export const Question = ({
           `}
           defaultValue={
             !isShowingDetails
-              ? formatDescriptionTextByChatGPT(question?.description, 100)
+              ? formatDescriptionText(question?.description, 100)
               : question?.description
           }
         />
