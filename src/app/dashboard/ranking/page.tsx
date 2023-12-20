@@ -85,13 +85,9 @@ const Card = ({
   i: number;
   screenSize: { width: number };
 }) => {
-  if (screenSize && screenSize.width > 640) {
+  if (screenSize && screenSize.width < 640) {
     return (
-      <div
-        className={`${i === 0 ? "mt-16" : ""} ${
-          i === 2 ? "mt-32" : ""
-        } shadow-2xl shadow-sky-900 rounded-md p-4`}
-      >
+      <div className={`shadow-2xl shadow-sky-900 rounded-md p-4`}>
         <div className="flex justify-between mb-8 border-b-2 pb-4">
           {(() => {
             if (i === 0 || i === 1 || i === 2) {
@@ -99,15 +95,15 @@ const Card = ({
                 <>
                   <div className="font-semibold">
                     <span className="bg-black text-white p-2 text-sm rounded-full mr-2">
-                      {i === 1 && "#1"}
-                      {i === 0 && "#2"}
+                      {i === 0 && "#1"}
+                      {i === 1 && "#2"}
                       {i === 2 && "#3"}
                     </span>
-                    {i === 1 && "Primeiro lugar"}
-                    {i === 0 && "Segundo lugar"}
+                    {i === 0 && "Primeiro lugar"}
+                    {i === 1 && "Segundo lugar"}
                     {i === 2 && "Terceiro lugar"}
                   </div>
-                  {i === 1 && (
+                  {i === 0 && (
                     <Image
                       src={"/1st.png"}
                       alt="posição"
@@ -115,7 +111,7 @@ const Card = ({
                       height={20}
                     />
                   )}
-                  {i === 0 && (
+                  {i === 1 && (
                     <Image
                       src={"/2nd.png"}
                       alt="posição"
@@ -172,7 +168,11 @@ const Card = ({
   }
 
   return (
-    <div className={`shadow-2xl shadow-sky-900 rounded-md p-4`}>
+    <div
+      className={`${i === 0 ? "mt-16" : ""} ${
+        i === 2 ? "mt-32" : ""
+      } shadow-2xl shadow-sky-900 rounded-md p-4`}
+    >
       <div className="flex justify-between mb-8 border-b-2 pb-4">
         {(() => {
           if (i === 0 || i === 1 || i === 2) {
@@ -180,15 +180,15 @@ const Card = ({
               <>
                 <div className="font-semibold">
                   <span className="bg-black text-white p-2 text-sm rounded-full mr-2">
-                    {i === 0 && "#1"}
-                    {i === 1 && "#2"}
+                    {i === 1 && "#1"}
+                    {i === 0 && "#2"}
                     {i === 2 && "#3"}
                   </span>
-                  {i === 0 && "Primeiro lugar"}
-                  {i === 1 && "Segundo lugar"}
+                  {i === 1 && "Primeiro lugar"}
+                  {i === 0 && "Segundo lugar"}
                   {i === 2 && "Terceiro lugar"}
                 </div>
-                {i === 0 && (
+                {i === 1 && (
                   <Image
                     src={"/1st.png"}
                     alt="posição"
@@ -196,7 +196,7 @@ const Card = ({
                     height={20}
                   />
                 )}
-                {i === 1 && (
+                {i === 0 && (
                   <Image
                     src={"/2nd.png"}
                     alt="posição"
