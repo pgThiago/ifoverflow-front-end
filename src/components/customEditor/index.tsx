@@ -1,4 +1,6 @@
-import { useRef } from "react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import SunEditor from "suneditor-react";
 import SunEditorCore from "suneditor/src/lib/core";
 
@@ -14,10 +16,15 @@ export const CustomEditor = ({
   isOwner?: boolean;
 }) => {
   const editor = useRef<SunEditorCore>();
-
   const getSunEditorInstance = (sunEditor: SunEditorCore) => {
     editor.current = sunEditor;
   };
+
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    setContent(defaultValue);
+  }, [defaultValue]);
 
   return (
     <>
@@ -25,8 +32,8 @@ export const CustomEditor = ({
         lang={"pt_br"}
         height="auto"
         setDefaultStyle={defaultStyle}
-        defaultValue={defaultValue}
-        setContents={defaultValue}
+        defaultValue={content}
+        setContents={content}
         getSunEditorInstance={getSunEditorInstance}
         readOnly
         hideToolbar
