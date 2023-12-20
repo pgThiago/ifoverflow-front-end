@@ -273,14 +273,16 @@ const Podium = ({ data, screenSize }: PodiumProps) => {
     }
   }, [data, hasUpdated]);
 
-  if (screenSize && screenSize.width > 640) {
+  console.log(screenSize.width);
+
+  if (screenSize && screenSize.width < 640) {
     return (
       <>
         <h4 className="text-black font-semibold mx-auto rounded-lg bg-white w-fit px-4 py-2">
           Ranking
         </h4>
-        <div className="flex gap-4 items-start justify-center md:gap-8 py-2 my-8">
-          {tops.map((user, i) => (
+        <div className="grid grid-cols-1 gap-8 px-4 py-2 my-8">
+          {data.map((user, i) => (
             <Card key={i} i={i} user={user} screenSize={screenSize} />
           ))}
         </div>
@@ -293,8 +295,8 @@ const Podium = ({ data, screenSize }: PodiumProps) => {
       <h4 className="text-black font-semibold mx-auto rounded-lg bg-white w-fit px-4 py-2">
         Ranking
       </h4>
-      <div className="grid grid-cols-1 gap-8 px-4 py-2 my-8">
-        {data.map((user, i) => (
+      <div className="flex gap-4 items-start justify-center md:gap-8 py-2 my-8">
+        {tops.map((user, i) => (
           <Card key={i} i={i} user={user} screenSize={screenSize} />
         ))}
       </div>
