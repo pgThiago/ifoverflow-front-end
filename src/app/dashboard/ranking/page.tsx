@@ -273,8 +273,6 @@ const Podium = ({ data, screenSize }: PodiumProps) => {
     }
   }, [data, hasUpdated]);
 
-  console.log(screenSize.width);
-
   if (screenSize && screenSize.width < 640) {
     return (
       <>
