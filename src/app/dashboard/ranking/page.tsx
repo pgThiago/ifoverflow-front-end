@@ -42,20 +42,20 @@ const Card = ({ user, i }: { user: RankingUserType; i: number }) => {
         i === 2 ? "mt-32" : ""
       } shadow-2xl shadow-sky-900 rounded-md p-2 md:p-4`}
     >
-      <div className="flex justify-between mb-8 border-b-2 pb-4">
+      <div className="flex justify-between mb-2 md:mb-4 border-b-2 pb-4">
         {(() => {
           if (i === 0 || i === 1 || i === 2) {
             return (
               <>
-                <div className="font-semibold">
-                  <span className="bg-black text-white p-2 text-sm rounded-full mr-2">
+                <div className="font-semibold text-xs md:text-sm">
+                  <span className="bg-black text-white p-2 rounded-full mr-2">
                     {i === 1 && "#1"}
                     {i === 0 && "#2"}
                     {i === 2 && "#3"}
                   </span>
-                  {i === 1 && "Primeiro lugar"}
-                  {i === 0 && "Segundo lugar"}
-                  {i === 2 && "Terceiro lugar"}
+                  {i === 1 && "Primeiro"}
+                  {i === 0 && "Segundo"}
+                  {i === 2 && "Terceiro"}
                 </div>
                 {i === 1 && (
                   <Image
@@ -91,21 +91,21 @@ const Card = ({ user, i }: { user: RankingUserType; i: number }) => {
           <AvatarByName
             color="#000"
             fgColor="#fff"
-            size="40"
-            className="rounded-full mr-2"
+            size="20"
+            className="rounded-full mr-2 text-xs"
             name={user?.name}
             maxInitials={2}
           />
         </div>
 
-        <div className="flex flex-col ml-4">
+        <div className="flex flex-col ml-2 md:ml-4 text-xs md:text-sm">
           <span className="">{user.name}</span>
           <span className="text-black font-bold">
             {user.name.split(" ")[1]}
           </span>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between text-xs md:text-sm">
         <div className="flex flex-col">
           <span className="text-black">{user.votes}</span>
           <span className="text-black font-bold">votos</span>
@@ -147,7 +147,7 @@ const Podium = ({ data }: PodiumProps) => {
       <h4 className="text-black font-semibold mx-auto rounded-lg bg-white w-fit px-4 py-2">
         Ranking
       </h4>
-      <div className="flex gap-2 p-2 items-start justify-center md:gap-8 py-2 my-8">
+      <div className="flex gap-2 p-2 items-start justify-center md:gap-4 py-2 my-8">
         {tops.map((user, i) => (
           <Card key={i} i={i} user={user} />
         ))}
