@@ -5,7 +5,7 @@ import { Comment } from "@/components/comment";
 import { Question, QuestionSkeleton } from "@/components/question";
 import { Textarea } from "@/components/textarea";
 import { useService } from "@/services";
-import { CommentType, NewAnswerTypes } from "@/types";
+import { AnswerType, CommentType, NewAnswerTypes } from "@/types";
 import { sortBestAnswer } from "@/utils/sort";
 import { useAuthStore } from "@/zustand/useAuthStore";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -118,6 +118,13 @@ const QuestionDetailsClient = () => {
     return <QuestionSkeleton />;
   }
 
+  const hasBest = (answers: AnswerType[]) => {
+    const best = answers?.find(
+      (answer: AnswerType) => answer.accepted === true
+    );
+    return best?.accepted ? true : false;
+  };
+
   return (
     <>
       <h2 className="text-black text-xl my-2 ml-4">
@@ -184,6 +191,7 @@ const QuestionDetailsClient = () => {
           isOwnerOfAnswer={answer?.user?.id === user?.id}
           isOwnerOfQuestion={question?.user?.id === user?.id}
           isShowingDetails={true}
+          hasBestanswer={hasBest(question?.answers)}
         />
       ))}
       <FormProvider {...answerMethods}>

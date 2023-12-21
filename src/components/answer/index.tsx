@@ -28,6 +28,7 @@ export const Answer = ({
   answer,
   isOwnerOfAnswer,
   isOwnerOfQuestion,
+  hasBestanswer,
 }: IAnswerItemProps) => {
   const methods = useForm<NewCommentOnAnswerTypes>({
     resolver: zodResolver(commentSchema),
@@ -198,21 +199,26 @@ export const Answer = ({
         <div className="flex flex-col w-full ml-4 mt-8">
           <span className="flex justify-between font-bold">
             {isOwnerOfAnswer ? "Você" : answer?.user?.name}
-            {!isOwnerOfAnswer && isOwnerOfQuestion && (
-              <button
-                title={`${
-                  answer.accepted
-                    ? "Melhor resposta"
-                    : "Marcar como melhor resposta"
-                }`}
-              >
+
+            {hasBestanswer && answer.accepted && (
+              <button title={`${"Melhor resposta"}`}>
+                <HeartStraight
+                  size={50}
+                  weight={"fill"}
+                  color="red"
+                  className="animate-pulse cursor-pointer "
+                />
+              </button>
+            )}
+            {!isOwnerOfAnswer && !hasBestanswer && isOwnerOfQuestion && (
+              <button title={`${"Marcar como melhor resposta"}`}>
                 <HeartStraight
                   onClick={() => {
                     showHeartStraightAnimation();
                     selectAsBestAnswer(Number(answer?.id));
                   }}
-                  size={answer.accepted ? 50 : 32}
-                  weight={answer.accepted ? "fill" : "thin"}
+                  size={32}
+                  weight={"thin"}
                   color="red"
                   className="animate-pulse cursor-pointer "
                 />
