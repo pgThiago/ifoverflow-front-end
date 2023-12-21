@@ -191,7 +191,7 @@ const QuestionDetailsClient = () => {
           isOwnerOfAnswer={answer?.user?.id === user?.id}
           isOwnerOfQuestion={question?.user?.id === user?.id}
           isShowingDetails={true}
-          hasBestanswer={hasBest(question?.answers)}
+          hasBestAnswer={hasBest(question?.answers)}
         />
       ))}
       <FormProvider {...answerMethods}>

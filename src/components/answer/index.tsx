@@ -28,7 +28,7 @@ export const Answer = ({
   answer,
   isOwnerOfAnswer,
   isOwnerOfQuestion,
-  hasBestanswer,
+  hasBestAnswer,
 }: IAnswerItemProps) => {
   const methods = useForm<NewCommentOnAnswerTypes>({
     resolver: zodResolver(commentSchema),
@@ -200,7 +200,7 @@ export const Answer = ({
           <span className="flex justify-between font-bold">
             {isOwnerOfAnswer ? "Você" : answer?.user?.name}
 
-            {hasBestanswer && answer.accepted && (
+            {hasBestAnswer && answer.accepted && (
               <button title={`${"Melhor resposta"}`}>
                 <HeartStraight
                   size={50}
@@ -210,7 +210,7 @@ export const Answer = ({
                 />
               </button>
             )}
-            {!isOwnerOfAnswer && !hasBestanswer && isOwnerOfQuestion && (
+            {!isOwnerOfAnswer && !hasBestAnswer && isOwnerOfQuestion && (
               <button title={`${"Marcar como melhor resposta"}`}>
                 <HeartStraight
                   onClick={() => {

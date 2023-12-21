@@ -32,7 +32,7 @@ export interface IAnswerItemProps {
   isShowingDetails: boolean;
   isOwnerOfAnswer: boolean;
   isOwnerOfQuestion: boolean;
-  hasBestanswer: boolean;
+  hasBestAnswer: boolean;
   // isAccepted: boolean;
 }
 
