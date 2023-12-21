@@ -10,6 +10,9 @@ interface ProvidersProps {
 const queryClient = new QueryClient({
   defaultOptions: {
     mutations: {},
+    queries: {
+      refetchOnWindowFocus: false,
+    },
   },
 });
 
