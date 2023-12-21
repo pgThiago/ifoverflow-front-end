@@ -238,6 +238,13 @@ export default function Home() {
                   selecionar suas áreas de interesse e comece a compartilhar seu
                   conhecimento com outros membros do grupo.
                 </p>
+                <Link
+                  href={"dashboard/questions"}
+                  key={2}
+                  className="flex justify-center font-bold bg-none hover:bg-black hover:brightness-110 py-2 mt-4 border text-xs text-white leading-tight uppercase rounded-md focus:shadow-lg focus:outline-none focus:ring-0 w-28"
+                >
+                  Ver perguntas
+                </Link>
               </div>
             </div>
           </div>
