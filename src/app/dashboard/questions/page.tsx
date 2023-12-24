@@ -80,49 +80,49 @@ const Questions = () => {
 
   return (
     <>
-      <div className="flex h-full items-center justify-center w-full">
+      <div className="flex h-full md:h-16 items-center md:items-start justify-center w-full">
         {!questions &&
           !searchParam &&
           !categoryParam &&
           !isFetching &&
           !isFetchingByCategory && (
-            <h4 className="font-semibold text-black shadow-2xl  shadow-sky-900 text-sm md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
+            <h4 className="md:absolute md:top-44 md:left-1/2 md:transform md:-translate-x-1/2 font-semibold text-black shadow-2xl shadow-sky-900 text-sm md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
               Nenhuma pergunta encontrada
             </h4>
           )}
 
         {!categoryParam && !searchParam && questions && (
-          <h4 className="font-semibold text-black shadow-2xl  shadow-sky-900 text-sm md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
+          <h4 className="md:absolute md:top-44 md:left-1/2 md:transform md:-translate-x-1/2 font-semibold text-black shadow-2xl shadow-sky-900 text-sm md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
             Perguntas
           </h4>
         )}
 
         {categoryParam && questions?.length === 0 && !searchParam && (
-          <h4 className="font-semibold text-black shadow-2xl  shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
+          <h4 className="md:absolute md:top-44 md:left-1/2 md:transform md:-translate-x-1/2 font-semibold text-black shadow-2xl shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
             {`Nenhuma pergunta encontrada na categoria ${categoryName}`}
           </h4>
         )}
 
         {searchParam && questions?.length === 0 && !categoryParam && (
-          <h4 className="font-semibold text-black shadow-2xl  shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
+          <h4 className="md:absolute md:top-44 md:left-1/2 md:transform md:-translate-x-1/2 font-semibold text-black shadow-2xl shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
             {`Nenhuma pergunta com "${searchParam}" foi encontrada`}
           </h4>
         )}
 
         {searchParam && questions?.length > 0 && (
-          <h4 className="font-semibold text-black shadow-2xl  shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
+          <h4 className="md:absolute md:top-44 md:left-1/2 md:transform md:-translate-x-1/2 font-semibold text-black shadow-2xl shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
             {`Perguntas com "${search}"`}
           </h4>
         )}
 
         {categoryParam && questions?.length > 0 && (
-          <h4 className="font-semibold text-black shadow-2xl  shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
+          <h4 className="md:absolute md:top-44 md:left-1/2 md:transform md:-translate-x-1/2 font-semibold text-black shadow-2xl shadow-sky-900 text-xs md:text-lg mx-auto mb-4 rounded-lg bg-white w-fit px-4 py-2">
             {categoryName}
           </h4>
         )}
       </div>
 
-      <div>
+      <div className="-mt-1">
         {!questions &&
           ((isLoading && isFetching && <QuestionListSkeleton />) ||
             (isLoadingByCategory && isFetchingByCategory && (

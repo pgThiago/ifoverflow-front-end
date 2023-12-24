@@ -118,7 +118,7 @@ export const Question = ({
     <section
       className={`px-4 pb-8 pt-0 flex ${
         isOwnerOfQuestion ? "bg-sky-100" : "bg-white"
-      }  mb-4 mx-4 rounded-md shadow-2xl shadow-sky-900`}
+      }  mb-4 mx-4 md:mx-0 rounded-md shadow-2xl shadow-sky-900`}
     >
       <div className="flex flex-col items-center">
         <div className="mt-8">

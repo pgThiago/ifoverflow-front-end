@@ -11,7 +11,7 @@ import { useQuestionsStore } from "@/zustand/useQuestionsStore";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { CloudFog, FunnelSimple, X } from "phosphor-react";
+import { FunnelSimple, X } from "phosphor-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import secureLocalStorage from "react-secure-storage";
@@ -101,8 +101,8 @@ const DashboarLayout = (props: IDashboarLayoutProps) => {
 
         <Search handleSearch={handleSearch} />
 
-        <main className="w-full flex-grow">
-          <section className="flex items-center justify-between px-4 py-2">
+        <main className="w-full flex-grow md:flex md:flex-col">
+          <section className="flex items-center justify-between md:justify-end px-4 py-2">
             {showCategories && (
               <X
                 onClick={() => {
@@ -112,12 +112,12 @@ const DashboarLayout = (props: IDashboarLayoutProps) => {
                 size={24}
                 color="#fff"
                 weight="fill"
-                className={`hover:cursor-pointer relative z-30`}
+                className={`hover:cursor-pointer relative z-30 md:hidden`}
               />
             )}
 
             {!showCategories && (
-              <div className="flex gap-2">
+              <div className="flex gap-2 md:hidden">
                 <FunnelSimple
                   onClick={handleToggleCategories}
                   className={`hover:cursor-pointer relative z-30`}
@@ -152,22 +152,31 @@ const DashboarLayout = (props: IDashboarLayoutProps) => {
             )}
           </section>
 
-          <section className="relative -top-32">
-            {showCategories && (
+          <section className="md:flex md:justify-between md:mx-4">
+            <section className="relative -top-32 md:top-0">
+              {showCategories && (
+                <Categories
+                  showCategories={showCategories}
+                  handleToggleCategories={handleToggleCategories}
+                  categories={categories}
+                />
+              )}
+            </section>
+            <section className="hidden md:block relative -top-32 md:top-0 mr-4">
               <Categories
                 showCategories={showCategories}
                 handleToggleCategories={handleToggleCategories}
                 categories={categories}
               />
-            )}
-          </section>
+            </section>
 
-          <section className="flex flex-col flex-grow">
-            {props.children}
-            {props.newQuestionParallel}
-            {props.aboutParallel}
-            {props.licenseParallel}
-            {props.privacyParallel}
+            <section className="flex flex-col flex-grow">
+              {props.children}
+              {props.newQuestionParallel}
+              {props.aboutParallel}
+              {props.licenseParallel}
+              {props.privacyParallel}
+            </section>
           </section>
 
           {questions?.length > 10 && <RocketLaunch />}

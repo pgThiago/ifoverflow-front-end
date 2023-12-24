@@ -95,7 +95,10 @@ export const Header = () => {
               >
                 <span className="font-semibold">{user?.name}</span>
                 <span className="font-semibold">{user?.email}</span>
-                <Link className="mt-2 font-semibold" href="/dashboard/profile">
+                <Link
+                  className="mt-2 font-semibold hover:underline"
+                  href="/dashboard/profile"
+                >
                   Minhas perguntas
                 </Link>
                 <div className="flex items-center justify-start mt-4 hover:scale-105 rounded-sm">
