@@ -127,7 +127,7 @@ const QuestionDetailsClient = () => {
 
   return (
     <>
-      <h2 className="text-black text-xl my-2 ml-4">
+      <h2 className="text-black text-xl my-2 ml-4 md:ml-0 md:mt-14">
         {user?.id === question?.user?.id ? (
           "Interações com a sua pergunta"
         ) : (
